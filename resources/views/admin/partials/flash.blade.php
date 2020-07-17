@@ -13,9 +13,9 @@
 @endforeach @endif
 
 @if($messages) @foreach ($messages as $key => $value)
-    <div class="alert alert-danger alert-dismissible" role="alert">
+    <div class="alert alert-success alert-dismissible" role="alert">
         <button class="close" type="button" data-dismiss="alert">×</button>
-        <strong>Error!</strong> {{ $value }}
+        <strong>Success!</strong> {{ $value }}
     </div>
 @endforeach @endif
 

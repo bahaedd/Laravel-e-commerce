@@ -1,6 +1,7 @@
 <?php
 
 use App\Providers\SettingServiceProvider;
+use App\Providers\RepositoryServiceProvider;
 
 return [
 
@@ -164,6 +165,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         SettingServiceProvider::class,
+        RepositoryServiceProvider::class,
 
         /*
          * Package Service Providers...
