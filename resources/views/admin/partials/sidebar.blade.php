@@ -2,8 +2,8 @@
 <aside class="app-sidebar">
     <div class="app-sidebar__user">
         <div>
-            <p class="app-sidebar__user-name">John Doe</p>
-            <p class="app-sidebar__user-designation">Frontend Developer</p>
+            <p class="app-sidebar__user-name">Bahaeddine</p>
+            <p class="app-sidebar__user-designation">Full stack web Developer</p>
         </div>
     </div>
     <ul class="app-menu">
@@ -43,6 +43,12 @@
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}" href="{{ route('admin.attributes.index') }}">
                 <i class="app-menu__icon fa fa-th"></i>
                 <span class="app-menu__label">Attributes</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.brands.index' ? 'active' : '' }}" href="{{ route('admin.brands.index') }}">
+                <i class="app-menu__icon fa fa-briefcase"></i>
+                <span class="app-menu__label">Brands</span>
             </a>
         </li>
     </ul>
