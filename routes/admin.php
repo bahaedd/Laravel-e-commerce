@@ -1,5 +1,6 @@
 <?php
 
+// login and settings routes
 Route::group(['prefix'  =>  'admin'], function () {
     Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'Admin\LoginController@login')->name('admin.login.post');
@@ -13,6 +14,7 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::post('/settings', 'Admin\SettingController@update')->name('admin.settings.update');
 });
 
+// Categories routes
 Route::group(['prefix'  =>   'categories'], function() {
 
     Route::get('/', 'Admin\CategoryController@index')->name('admin.categories.index');
@@ -21,6 +23,18 @@ Route::group(['prefix'  =>   'categories'], function() {
     Route::get('/{id}/edit', 'Admin\CategoryController@edit')->name('admin.categories.edit');
     Route::post('/update', 'Admin\CategoryController@update')->name('admin.categories.update');
     Route::get('/{id}/delete', 'Admin\CategoryController@delete')->name('admin.categories.delete');
+
+});
+
+// Attributtes routes
+Route::group(['prefix'  =>   'attributes'], function() {
+
+    Route::get('/', 'Admin\AttributeController@index')->name('admin.attributes.index');
+    Route::get('/create', 'Admin\AttributeController@create')->name('admin.attributes.create');
+    Route::post('/store', 'Admin\AttributeController@store')->name('admin.attributes.store');
+    Route::get('/{id}/edit', 'Admin\AttributeController@edit')->name('admin.attributes.edit');
+    Route::post('/update', 'Admin\AttributeController@update')->name('admin.attributes.update');
+    Route::get('/{id}/delete', 'Admin\AttributeController@delete')->name('admin.attributes.delete');
 
 });
 

@@ -54,7 +54,7 @@
                                         <td class="text-center">
                                             <div class="btn-group" role="group" aria-label="Second group">
                                                 <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('admin.categories.delete', $category->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="{{ route('admin.categories.delete', $category->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
