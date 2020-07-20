@@ -18,6 +18,15 @@ return [
         'passwords' => 'users',
     ],
 
+    'socialite' => [
+        'drivers' => [
+            'google',
+            'facebook',
+            'github',
+            'bitbucket',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards

@@ -12,6 +12,17 @@
                 <div class="card">
                     <header class="card-header">
                         <h4 class="card-title mt-2">Sign In</h4>
+                        <div class="btn-group white p-3" style="">
+                            <a class="btn btn-warning" href="{{ route('login.provider', 'google') }}">
+                                <i class="fab fa-google  fa-fw" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-facebook" title="Facebook" target="_blank" href="{{ route('login.provider', 'facebook') }}"><i
+                                    class="fab fa-facebook-f  fa-fw"></i></a>
+                            <a class="btn btn-dark" title="github" target="_blank" href="{{ route('login.provider', 'github') }}"><i
+                                    class="fab fa-github fa-fw"></i></a>
+                            <a class="btn btn-primary" title="Youtube" target="_blank" href="{{ route('login.provider', 'bitbucket') }}""><i
+                                    class="fab fa-bitbucket  fa-fw"></i></a>
+                        </div>
                     </header>
                     <article class="card-body">
                         <form action="{{ route('login') }}" method="POST" role="form">
