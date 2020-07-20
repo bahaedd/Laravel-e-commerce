@@ -14,7 +14,7 @@ class ProductAttribute extends Model
     /**
      * @var array
      */
-    protected $fillable = ['product_id', 'quantity', 'price'];
+    protected $fillable = ['attribute_id', 'value', 'product_id', 'quantity', 'price'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -30,4 +30,12 @@ class ProductAttribute extends Model
     {
         return $this->belongsToMany(AttributeValue::class);
     }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function attributes()
+    {
+        return $this->belongsTo(Attribute::class);
+    }
+
 }
