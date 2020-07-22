@@ -40,6 +40,17 @@ class CategoryRepository extends BaseRepository implements CategoryContract
     }
 
     /**
+     * @return mixed
+     */
+    public function treeList()
+    {
+        return Category::orderByRaw('-name ASC')
+            ->get()
+            ->nest()
+            ->listsFlattened('name');
+    }
+
+    /**
      * @param int $id
      * @return mixed
      * @throws ModelNotFoundException
@@ -130,4 +141,13 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         return $category;
     }
+
+    public function findBySlug($slug)
+    {
+        return Category::with('products')
+        ->where('slug', $slug)
+        ->where('menu', 1)
+        ->first();
+    }
+
 }

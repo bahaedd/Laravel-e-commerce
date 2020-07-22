@@ -59,7 +59,7 @@ class LoginController extends Controller
     public function handleProviderCallback($driver)
     {
         $getInfo = Socialite::driver($driver)->stateless()->user();
-        dd($getInfo);
+        // dd($getInfo);
         $user = $this->createUser($getInfo,$driver);
 
         return redirect()->to('/');
@@ -74,8 +74,8 @@ class LoginController extends Controller
                $first_name = $getInfo->offsetGet('name');
                $last_name = $getInfo->offsetGet('name');
                $email = $getInfo->offsetGet('email');
-               $provider_id = $getInfo->offsetGet('id');
-               $provider_name = 'facebook';
+               $provider_id = $getInfo->getId();
+               $provider_name = $driver;
                $avatar = $getInfo->avatar;
                break;
 
@@ -83,8 +83,8 @@ class LoginController extends Controller
                $first_name = $getInfo->offsetGet('given_name');
                $last_name = $getInfo->offsetGet('family_name');
                $email = $getInfo->offsetGet('email');
-               $provider_id = $getInfo->offsetGet('id');
-               $provider_name = 'google';
+               $provider_id = $getInfo->getId();
+               $provider_name = $driver;
                $avatar = $getInfo->avatar;
                break;
 
@@ -92,8 +92,8 @@ class LoginController extends Controller
                $first_name = $getInfo->offsetGet('name');
                $last_name = $getInfo->offsetGet('name');
                $email = $getInfo->offsetGet('email');
-               $provider_id = $getInfo->offsetGet('id');
-               $provider_name = 'github';
+               $provider_id = $getInfo->getId();
+               $provider_name = $driver;
                $avatar = $getInfo->avatar;
                break;
 
@@ -101,8 +101,8 @@ class LoginController extends Controller
                $first_name = $getInfo->offsetGet('name');
                $last_name = $getInfo->offsetGet('name');
                $email = $getInfo->offsetGet('email');
-               $provider_id = $getInfo->offsetGet('id');
-               $provider_name = 'github';
+               $provider_id = $getInfo->getId();
+               $provider_name = $driver;
                $avatar = $getInfo->avatar;
                break;
 
@@ -126,7 +126,7 @@ class LoginController extends Controller
                 'first_name'         =>  $first_name,
                 'last_name'          =>  $last_name,
                 'email'              =>  $email,
-                'provider_name'      =>  $provider_name,
+                'provider_name'      =>  $driver,
                 'provider_id'        =>  $provider_id,
                 'avatar'             =>  $avatar,
             ]);
