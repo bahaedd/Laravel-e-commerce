@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Support\Facades\Config;
+use Config;
 
 class Setting extends Model
 {
